@@ -1,0 +1,231 @@
+\documentclass[12pt, a4paper]{article}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{zhnumber}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage[superscript]{cite}
+\usepackage{pifont}
+\usepackage{floatrow}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage[labelsep=space]{caption}
+\usepackage{titletoc}
+
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
+
+\usepackage[left=30mm, right=25mm, bottom=20mm,top=10mm, includeheadfoot,headheight=30mm, headsep=5mm, footskip=20mm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newfontfamily{\宋体黑}{Songti SC Black}
+\newfontfamily{\songti}{Songti SC}
+\newfontfamily{\huawen}{华文新魏}
+\newfontfamily{\黑体}{SimHei}
+\newfontfamily{\TNR}{Times New Roman}
+\newfontfamily{\TNRB}{Times New Roman Bold}
+
+\renewcommand{\thepage}{\arabic{page}}
+
+\setmainfont{宋体}
+\linespread{1.25}
+\parindent=24pt
+
+\fancyhf{}
+
+\fancyhead[L]{\includegraphics[scale=0.7]{kmust.png}\raisebox{5mm}{\huawen \fontsize{26pt}{39pt}\selectfont 昆明理工大学 设计（论文）专用纸}}
+\fancyfoot[R]{\includegraphics[scale=0.8]{kmust2.png}}
+\fancyfoot[C]{{\huawen 第}\thepage{\huawen 页}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\renewcommand\thefigure{\arabic{section}-\arabic{figure}}
+\renewcommand\thetable{\arabic{section}-\arabic{table}}
+
+\renewcommand{\refname}{参考文献}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\listfigurename}{图片目录}
+\renewcommand{\abstractname}{\黑体\fontsize{15pt}{20pt}\selectfont 摘\quad 要}
+
+
+\newcommand{\mysection}{n}
+
+\begin{document}
+{
+\pagenumbering{Roman}
+\titleformat{\section}{\centering\黑体\fontsize{15pt}{20pt}\selectfont}{第\thesection 章}{1em}{}
+\titleformat{\subsection}{\黑体\fontsize{14pt}{20pt}\selectfont}{\thesubsection}{1em}{}
+{
+{
+\renewcommand{\abstractname}{\黑体\fontsize{15pt}{20pt}\selectfont 摘\quad 要}
+\begin{abstract}
+中文摘要\\[5mm]
+{
+\宋体黑 关键字：
+}
+\end{abstract}
+}
+\titlecontents{section}[0pt]{}{摘\, 要}{}{\titlerule*[10pt]{$\cdot$}\contentspage}
+\addcontentsline{toc}{section}{摘要}
+\newpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+\newpage
+{
+\renewcommand{\abstractname}{\TNRB\fontsize{15pt}{20pt}\selectfont ABSTRACT}
+\begin{abstract}
+{\TNR
+ 英语摘要}\\[5mm]
+{\TNRB Key words}
+\end{abstract}
+}
+\titlecontents{section}[0pt]{}{Abstract}{}{\titlerule*[10pt]{$\cdot$}\contentspage}
+\addcontentsline{toc}{section}{ABSTRACT}
+\newpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+
+}
+
+%\pagenumbering{arabic}
+{
+\newpage
+{
+\titlecontents{section}[0pt]{}{目录}{}{\titlerule*[10pt]{$\cdot$}\contentspage}
+\addcontentsline{toc}{section}{目录}
+}
+\setcounter{tocdepth}{3}
+\tableofcontents
+
+} 
+\newpage
+\addcontentsline{toc}{section}{图片目录}
+\listoffigures
+
+\newpage
+{
+{\begin{center}\黑体\fontsize{15pt}{20pt}\selectfont 前言\end{center}}\par
+\addcontentsline{toc}{section}{前言}
+}
+\newpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+\newpage
+
+\titlecontents{section}[0pt]{}{第\thecontentslabel 章\, }{}{\titlerule*[10pt]{$\cdot$}\contentspage}
+\pagenumbering{arabic}
+\section{绪论}
+正文
+{\begin{center}\centering\黑体\fontsize{15pt}{20pt}\selectfont 谢辞\end{center}}\par
+\addcontentsline{toc}{section}{谢辞}
+\newpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+\newpage
+\addcontentsline{toc}{section}{参考文献}
+\begin{thebibliography}{99}
+\bibitem[1]{1} Bellotto N, Hu H. Computationally efficient solutions for tracking people with a mobile robot: an experimental evaluation of Bayesian filters[J]. Autonomous Robots, 2010, 28(4): 425-438.
+\end{thebibliography}
+}
+\newpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+\newpage
+{
+\appendix
+\titleformat{\section}{\黑体\fontsize{15pt}{20pt}\selectfont}{附录\thesection}{1em}{}
+\titlecontents{section}[0pt]{}{附录\thecontentslabel\, }{}{\titlerule*[10pt]{$\cdot$}\contentspage}
+%下面是插入程序的例子
+\section{相关程序代码}
+\lstset{
+	language=Python,
+	tabsize=4,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{green}\ttfamily,
+    morecomment=[l][\color{magenta}]{\#},
+    extendedchars=false,
+    breaklines  = true,
+    numbers   = left
+}
+\begin{lstlisting}[frame=single, title={ 单片机程序/stm32f4\_auto }]
+#!/usr/bin/python
+#coding=utf-8
+
+import subprocess
+import argparse
+import sys
+
+
+def upLoadBinToSTM32():
+	'''将编译生产的二进制文件上传至单片机'''
+	try:
+		subprocess.check_output('''openocd -d0 -f board/stm32f4discovery.cfg -c init -c targets -c 	"poll" -c "reset halt" -c "flash probe 0" -c "flash write_image erase build/main.elf" -c "verify_image build/main.elf" -c "reset run" -c shutdown ''',
+			stderr=subprocess.STDOUT,
+			shell=True)
+	except subprocess.CalledProcessError:
+		print "没有安装openOCD"
+		sys.exit()
+	except:
+		print "其他错误"
+		sys.exit()
+	print "上传成功"
+	
+
+def main():
+	''' 主程序'''
+	parser = argparse.ArgumentParser(description='stm32f4自动工具')
+	parser.add_argument("--programme", "-P", action='store_true', help="烧写程序")
+	parser.add_argument("--upload", "-L", action='store_true', help="烧写程序")
+	args = parser.parse_args()
+	if args.programme or args.upload:
+		upLoadBinToSTM32()
+	
+
+
+
+if __name__ == '__main__':
+    main()
+
+\end{lstlisting}
+\newpage
+{\section{外文翻译}
+%{\centering \黑体\fontsize{16pt}{22pt}\selectfont 基于ROS与Kinect传感器的Roomba移动机器人控制平台的开发}
+%{\begin{center} \黑体\fontsize{15pt}{20pt}\selectfont 摘要 \end{center}}\par
+%本文提出了一种适用于Roomba移动机器人的控制方案，它使用ROS（机器人操作系统）使得利用速度矢量引用来控制机器人变为可能。本方案还将Kinect传感器加入系统，并将它作为与其他机器人交流，监控，远程控制的固件。这个系统是足够灵活的可以在未来的Roomab机器人上实现。此框架也可以使用从使用Kinect传感器的环境中提取的空间生成的参考速度矢量来控制机器人的运动。\\ 
+
+%{\begin{center} \黑体\fontsize{15pt}{20pt}\selectfont 第1章 介绍 \end{center}} \par
+%移动机器人特点是允许进入的不同结构的工作地区，它们的多样性被被利用在不同的地点，例如矿产勘查，行星探索任务，搜索和救援，危险废物清理，监视，侦察土地之中。当前的研究方向是通过提高多任务的调度效率和兼容性，集成新的设备，传感器和应用来提高机器人系统。在这点上，我们希望开发一个使用kinect传感器获得信息来利用速度矢量引用来控制Roomba移动机器人的控制平台。\\
+%{\黑体\fontsize{14pt}{18pt}\selectfont 1.1 移动机器人}\par
+%\phantom{s}
+%\thispagestyle{empty}
+%\clearpage
+%\newpage
+\section{外文原文}
+%插入图片
+%\includegraphics[scale=0.7]{p1.jpg}
+%\newpage
+%\includegraphics[scale=0.7]{p2.jpg}
+%\newpage
+}
+\end{document}

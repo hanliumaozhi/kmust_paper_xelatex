@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{zhnumber}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage[super]{cite}
+\usepackage{pifont}
+\usepackage[top=20mm, bottom=20mm, includeheadfoot, headsep=0mm]{geometry}
+
+\newfontfamily{\宋体黑}{Songti SC Black}
+\newfontfamily{\songti}{Songti SC}
+\newfontfamily{\huawen}{华文新魏}
+
+\newfontfamily{\TNR}{Times New Roman}
+\newfontfamily{\TNRB}{Times New Roman Bold}
+
+\newlength{\drop}
+
+\begin{document}
+\begin{titlepage}
+{
+\begin{center}
+\huawen
+{
+\fontsize{36pt}{44pt}\selectfont
+昆明理工大学 \par
+}
+\vspace{14pt}
+{
+\fontsize{42pt}{50pt}\selectfont
+毕业设计（论文）\\[40mm]
+}
+\end{center}
+}
+{
+\宋体黑
+
+\fontsize{15pt}{18pt}\selectfont
+\baselineskip=2.76\baselineskip
+ 题\qquad 目：\uline{\hfill ****设计\hfill} \par
+ \hspace{75pt}\uline{\hfill ****设计\hfill} \par
+ 学\qquad 院：\uline{\hfill 信息工程与自动化学院\hfill} \par
+ 专\qquad 业：\uline{\hfill 自动化\hfill} \par
+ 年\qquad 级：\uline{\hfill 2010级\hfill} \par
+ 学生姓名：\uline{\hfill *\quad *\hfill} \par
+ 指导老师：\uline{\hfill **** \hfill} \par
+ 日\qquad 期：\uline{\hfill 2014年5月\hfill} \par
+}
+{
+\vspace{15pt}
+\huawen
+\begin{center}
+\fontsize{18pt}{36pt}\selectfont
+教务处制
+\end{center}
+}
+\end{titlepage}
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+{\begingroup
+\drop=20mm
+\vspace{\drop}
+\TNR
+\centering
+{\LARGE Kunming University of Science and Technology}\\[2\baselineskip]
+{\LARGE\sffamily ******** }\par
+\vfill
+{\LARGE THESIS}\par
+\vspace{\drop}
+{\large College : Faculty of Information Engineering and Automation \\
+		Supervisor : ******* \\
+		Number : ******* \\
+		Specialty : Automation \\
+		
+        Date : May, 2014 }\par
+\vfill
+{\large\bfseries Song Liu}\par
+\endgroup
+\thispagestyle{empty}
+\clearpage
+}
+\newpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+\TNRB
+{
+\begin{center}
+\vspace{10mm}
+\fontsize{18pt}{36pt}
+\selectfont
+**********************\\[50mm]
+\end{center}
+}
+{
+\fontsize{14pt}{24pt}
+\selectfont
+\baselineskip=2.1\baselineskip
+University: \uline{\hfill  Kunming University of Science and Technology \hfill} \par
+Major: \uline{\hfill  Automation \hfill} \par
+Grade: \uline{\hfill  2010 \hfill} \par
+Name: \uline{\hfill  ******* \hfill} \par
+Advisor: \uline{\hfill  ******* \hfill} \par
+Department: \uline{\hfill {\fontsize{13pt}{22pt}\selectfont Faculty of Information Engineering and Automation \hfill}} \par
+Date: \uline{\hfill  May, 2014 \hfill} \par
+}
+\thispagestyle{empty}
+\newpage
+\clearpage
+\phantom{s}
+\thispagestyle{empty}
+\clearpage
+\end{document}
