@@ -2,7 +2,7 @@ kmust_paper_xelatex
 =====================
 2014年昆明理工大学本科毕业论文的xeLaTeX模板
 # 软件依赖
-使用 [xelatex](http://www.xelatex.org/) 实现了中文的tex
+使用 [xelatex](http://www.xelatex.org/) 实现了中文的tex。其中kmust.tex为论文的主体部分，cover*为封皮，titlepage为封面（包括中英文）。
 
 # 其他说明
 由于tex的参考文献号没有方括号上标的，我是通过下面的方法实现的
